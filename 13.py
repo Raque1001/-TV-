@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import os
 
 
 client = discord.Client()
@@ -41,5 +42,5 @@ async def on_message(message):
         file.save["경고.xlsx"]
         await client.send_message(message.channel, "경고를 받았습니다. 조심해주시기 바랍니다.")
 
-
-client.run("NTQ3OTk1MjgzMDk1ODE0MTQ0.D0-4XA.EGvGMotYZii5Sa0lbCsdQa-wZ4s")
+access_token = os.environ("BOT_TOKEN")
+client.run(access_token)
